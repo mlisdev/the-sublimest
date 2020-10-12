@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -27,11 +27,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <div className="">
+            <div></div>
         <NavBar 
         user={this.state.user} 
         handleLogout={this.handleLogout}
         />
+          </div>
         <Switch>
           <Route exact path='/' render={() =>
            <div>Hello World!</div> 
@@ -39,8 +42,7 @@ class App extends Component {
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
               history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
-              
+              handleSignupOrLogin={this.handleSignupOrLogin} 
             />
           }/>
           <Route exact path='/login' render={({history}) => 

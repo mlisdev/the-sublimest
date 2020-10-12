@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import userService from '../../utils/userService';
 import './LoginPage.css';
+import userService from '../../utils/userService';
 
 class LoginPage extends Component {
   
@@ -11,7 +11,9 @@ class LoginPage extends Component {
   };
 
   handleChange = (e) => {
+    // Implement in an elegant way
     this.setState({
+      // Using Computed Property Names
       [e.target.name]: e.target.value
     });
   }
@@ -20,12 +22,13 @@ class LoginPage extends Component {
     e.preventDefault();
     try {
       await userService.login(this.state);
-      // Successfully logged up - show GamePage
       this.props.handleSignupOrLogin();
+      // Successfully signed up - show GamePage
       this.props.history.push('/');
     } catch (err) {
-      // Invalid user data (probably duplicate email)
-      alert('Invalid credentials');
+      // Do not alert in your projects,
+      // show a modal or some UI instead
+      alert('Invalid login');
     }
   }
 
