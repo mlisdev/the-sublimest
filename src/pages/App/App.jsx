@@ -5,6 +5,9 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Navbar } from 'react-bootstrap'; 
+
 
 class App extends Component {
   constructor() {
@@ -27,14 +30,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="">
-            <div></div>
+      <Container> 
+        <Navbar bg="light" expand="lg">
         <NavBar 
         user={this.state.user} 
         handleLogout={this.handleLogout}
-        />
-          </div>
+          />
+          </Navbar>
         <Switch>
           <Route exact path='/' render={() =>
            <div>Hello World!</div> 
@@ -52,7 +54,7 @@ class App extends Component {
             />
           }/>
         </Switch>
-      </div>
+        </Container>
     );
   }
 }
