@@ -5,7 +5,8 @@ const reviewsSchema = new mongoose.Schema({
     rating: { type: Number, min: 1, max: 5, default: 5 }, 
     updates: String, 
     covid: String, 
-    trails: { type: Schema.Types.ObjectId, ref: 'Trails' }, 
+    trailId: { type: mongoose.Schema.Types.ObjectId, ref: 'Trails' }, 
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
 }, {
   timestamps: true
 });

@@ -2,7 +2,6 @@ const axios = require('axios');
 
 module.exports = {
   searchTrails, 
-  populateTrail
 };
 
 function searchTrails(req, res) { 
@@ -10,23 +9,19 @@ function searchTrails(req, res) {
     .then(function (response) {
       // console.log(response);
       let { lat, lng } = response.data.results[0].geometry.location; 
-      console.log(lat, lng); 
-      res.json(response.data); 
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-};
-
-async function populateTrail() {
-  try {
-    const response = await axios.get(`https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lon}&key=${process.env.BASE_URL}`)
+      axios.get(`https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lng}&key=${process.env.HIKE_KEY}`)
       .then(function (response) { 
-        let { lat, lon } = response.data.
+        res.json(response.data)
       })
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-}
+        .catch(function (error) {
+              // handle error
+          console.log(error);
+            })
+          console.log(lat, lng); 
+          // res.json(response.data); 
+          })
+        .catch(function (error) {
+            // handle error
+          console.log(error);
+          })
+        };
