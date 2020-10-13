@@ -19,7 +19,7 @@ async function create(req, res) {
 }
 
 async function deleteOne(req, res) {
-    req.body.user = req.user._id; 
+    // req.body.user = req.user._id; 
     const deletedReview = await Review.findByIdAndRemove(req.params.id);
     res.status(200).json(deletedReview);
 }
