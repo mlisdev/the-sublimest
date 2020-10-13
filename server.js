@@ -21,7 +21,7 @@ let reviewsRouter = require('./routes/api/reviews');
 app.use('/api/users', require('./routes/users'));
 app.use('/api/trail-api', require('./routes/api/trail-api'));
 app.use(require('./config/auth'));
-app.use('./routes/api/reviews', reviewsRouter);
+app.use('/api/reviews', reviewsRouter);
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work 

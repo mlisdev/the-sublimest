@@ -2,7 +2,6 @@ const Review = require('../../models/review');
 
 module.exports = {
   index,
-  show,
   create,
   delete: deleteOne,
   update
@@ -13,13 +12,8 @@ async function index(req, res) {
   res.status(200).json(reviews);
 }
 
-async function show(req, res) {
-  const review = await Review.findById(req.params.id);
-  res.status(200).json(review);
-}
-
 async function create(req, res) {
-    req.body.trailId = req.params.id; 
+    // req.body.user = req.user._id; 
   const review = await Review.create(req.body);
   res.status(201).json(review);
 }
