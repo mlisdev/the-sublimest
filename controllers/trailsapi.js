@@ -1,34 +1,32 @@
-const Trails = require('../../models/trails');
+const axios = require('axios');
 
 module.exports = {
-  index,
-  show,
-  create,
-  delete: deleteOne,
-  update
+  searchTrails, 
+  populateTrail
 };
 
-async function index(req, res) {
-  const trails = await Puppy.find({});
-  res.status(200).json(trails);
-}
+function searchTrails(req, res) { 
+  axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${req.params.zipcode}&key=${process.env.GOOGLE_KEY}`)
+    .then(function (response) {
+      // console.log(response);
+      let { lat, lng } = response.data.results[0].geometry.location; 
+      console.log(lat, lng); 
+      res.json(response.data); 
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+};
 
-async function show(req, res) {
-  const trail = await Trail.findById(req.params.id);
-  res.status(200).json(trail);
-}
-
-async function create(req, res) {
-  const trail = await Trail.create(req.body);
-  res.status(201).json(trail);
-}
-
-async function deleteOne(req, res) {
-  const deletedTrail = await Trail.findByIdAndRemove(req.params.id);
-  res.status(200).json(deletedTrail);
-}
-
-async function update(req, res) {
-  const updatedTrail = await Trail.findByIdAndUpdate(req.params.id, req.body, {new: true});
-  res.status(200).json(updatedPuppy);
+async function populateTrail() {
+  try {
+    const response = await axios.get(`https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lon}&key=${process.env.BASE_URL}`)
+      .then(function (response) { 
+        let { lat, lon } = response.data.
+      })
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
 }
