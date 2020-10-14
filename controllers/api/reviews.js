@@ -13,7 +13,7 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
-    req.body.user = req.user._id; 
+    // req.body.user = req.user._id; 
     const review = await Review.create(req.body);
     res.status(201).json(review);
 }
@@ -25,7 +25,7 @@ async function deleteOne(req, res) {
 }
 
 async function update(req, res) {
-    req.body.user = req.user._id; 
+    // req.body.user = req.user._id; 
     const updatedReview = await Review.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.status(200).json(updatedReview);
 }
