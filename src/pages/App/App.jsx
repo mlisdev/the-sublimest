@@ -4,9 +4,9 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-import NavBar from '../../components/NavBar/NavBar';
+import Header from '../../components/Header/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Navbar } from 'react-bootstrap'; 
+import { Container, Navbar, Nav } from 'react-bootstrap'; 
 
 
 class App extends Component {
@@ -31,12 +31,10 @@ class App extends Component {
   render() {
     return (
       <Container> 
-        <Navbar bg="light" expand="lg">
-        <NavBar 
+        <Header 
         user={this.state.user} 
         handleLogout={this.handleLogout}
-          />
-          </Navbar>
+            />
         <Switch>
           <Route exact path='/' render={() =>
            <div>Hello World!</div> 
