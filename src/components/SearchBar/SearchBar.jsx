@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom"; 
-import { Col, Form, Button } from 'react-bootstrap'
+import { Col, Form, Button, CardColumns } from 'react-bootstrap'
 import trailService from '../../utils/trailService'; 
 import TrailCard from '../TrailCard/TrailCard'
 
@@ -29,16 +29,18 @@ function SearchBar(props) {
                 </Col>
             </Form.Row>
       </Form>
+      
       { results && (
-        <div>
-          <h1>Search Results</h1>
-          { results.trails.map((trail, idx) => (
+<>  <CardColumns>
+          { results.trails.map((trail, idx, location) => (
             <TrailCard 
               trail={trail}
               key={idx}
+              location={location}
             />
           ))}
-        </div>
+          </CardColumns>
+          </>
       )}
             
     </>

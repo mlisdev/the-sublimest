@@ -16,6 +16,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 let reviewsRouter = require('./routes/api/reviews');
+let trailsRouter = require('./routes/api/trail-api');
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/users'));

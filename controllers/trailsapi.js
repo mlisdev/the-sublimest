@@ -2,6 +2,7 @@ const axios = require('axios');
 
 module.exports = {
   searchTrails, 
+  getOne
 };
 
 function searchTrails(req, res) { 
@@ -17,7 +18,7 @@ function searchTrails(req, res) {
               // handle error
           console.log(error);
             })
-          console.log(lat, lng); 
+          // console.log(lat, lng); 
           // res.json(response.data); 
           })
         .catch(function (error) {
@@ -25,3 +26,16 @@ function searchTrails(req, res) {
           console.log(error);
           })
         };
+
+function getOne(req, res) {
+  axios.get(`https://www.hikingproject.com/data/get-trails-by-id?id=${trailID}=YOUR_KEY_HERE${process.env.HIKE_KEY}`)
+  .then(function (response) {
+      res.json(response.data)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+
+  // res.json(response.data); 
+}

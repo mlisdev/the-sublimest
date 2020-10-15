@@ -1,26 +1,36 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 // import TrailDetail from '../../pages/TrailDetail'; 
-import { Card } from 'react-bootstrap'; 
+import {
+  Card,
+  CardColumns,
+  ListGroup
+} from 'react-bootstrap'; 
 
 function TrailCard(props) {
   return (
     <>
-<Card style={{ width: '18rem' }}>
+    
+<Card sm>
   <Card.Img variant="top" src={props.trail.imgMedium} />
   <Card.Body>
           <Card.Title>{props.trail.name}</Card.Title>
     <Card.Text>
-            <dl>
-              <dt>Location</dt>
-              <dd>{props.trail.location}</dd>
-              <dt>Summary</dt>
-              <dd>{props.trail.summary}</dd>
-      </dl>
+            <ListGroup variant="flush">
+              <ListGroup.Item>Location</ListGroup.Item>
+              <ListGroup.Item>{props.trail.location}</ListGroup.Item>
+              Summary
+              {props.trail.summary}
+      </ListGroup>
     </Card.Text>
-          <Link exact to='/details'>More info</Link>
+          <Link
+            to={{
+              pathname: "/details", 
+              state: {trail: props.trail},
+            }}
+            >More info</Link>
   </Card.Body>
-</Card>
+        </Card>
     </>
   );
 }
