@@ -1,20 +1,24 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import TrailDetail from '../../pages/TrailDetail'; 
 import { Card } from 'react-bootstrap'; 
-
 
 function TrailCard(props) {
   return (
     <>
 <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
+  <Card.Img variant="top" src={props.trail.imgMedium} />
   <Card.Body>
-    <Card.Title>Trail Card</Card.Title>
+          <Card.Title>{props.trail.name}</Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+            <dl>
+              <dt>Location</dt>
+              <dd>{props.trail.location}</dd>
+              <dt>Summary</dt>
+              <dd>{props.trail.summary}</dd>
+      </dl>
     </Card.Text>
-    <Link to='/detail'>More info</Link>
+          <Link exact to='/details'>More info</Link>
   </Card.Body>
 </Card>
     </>

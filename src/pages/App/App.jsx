@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
@@ -8,7 +8,7 @@ import userService from '../../utils/userService';
 import Header from '../../components/Header/Header';
 import SearchArea from '../../components/SearchArea/SearchArea';
 // import TrailCard from '../../components/TrailCard/TrailCard';
-// import TrailDetail from '../../components/TrailDetail/TrailDetail';
+import TrailDetail from '../../pages/TrailDetail/TrailDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap'; 
 
@@ -52,11 +52,20 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
+          <Route exact path='/details' render={({history}) => 
+            <TrailDetail
+              history={history}
+            />
+          }/>
+          <Route exact path='/' render={({ history }) =>
+            <SearchArea
+              history={history}
+            />
+          }/>
         </Switch>
 
         
-        {this.state.user &&
-          <SearchArea />} 
+
         </Container>
     );
   }

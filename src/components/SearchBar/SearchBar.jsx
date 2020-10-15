@@ -1,4 +1,5 @@
-import React, {useEffect, useState}  from "react";
+import React, { useState } from "react";
+// import { Link } from "react-router-dom"; 
 import { Col, Form, Button } from 'react-bootstrap'
 import trailService from '../../utils/trailService'; 
 import TrailCard from '../TrailCard/TrailCard'
