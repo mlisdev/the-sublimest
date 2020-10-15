@@ -18,7 +18,7 @@ const NavBar = (props) => {
   <Nav>
   <Navbar.Collapse className="justify-content-end">
             <Nav.Link href='/myreviews'>My Reviews</Nav.Link>
-            <Nav.Link href='/about'>About Sublimeist</Nav.Link>
+            <Nav.Link href='/about'>About Sublimest</Nav.Link>
           <Nav.Link href='' onClick={props.handleLogout}>Logout</Nav.Link>
         </Navbar.Collapse>
         </Nav>
