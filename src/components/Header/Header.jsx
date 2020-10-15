@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap'; 
+import './Header.css';
+import {
+  Navbar,
+  Nav, 
+  Jumbotron
+} from 'react-bootstrap'; 
 
 const NavBar = (props) => {
-  let nav = props.user ?
+  let header = props.user ?
+    <>
     <Navbar className="bg-light justify-content-between" expand="xl">
     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
       <Navbar.Brand href="#home">THE SUBLIMEST</Navbar.Brand>
@@ -11,11 +17,16 @@ const NavBar = (props) => {
       <Navbar.Toggle />
   <Nav>
   <Navbar.Collapse className="justify-content-end">
-      <Nav.Link href='/myreviews'>My Reviews</Nav.Link>
+            <Nav.Link href='/myreviews'>My Reviews</Nav.Link>
+            <Nav.Link href='/about'>About Sublimeist</Nav.Link>
           <Nav.Link href='' onClick={props.handleLogout}>Logout</Nav.Link>
         </Navbar.Collapse>
         </Nav>
     </Navbar>
+    <Jumbotron className="hero">
+    <img src="hiking-unsplash.jpg" width="100%"></img>
+    </Jumbotron>
+      </>
     :
     <Navbar className="bg-light justify-content-between" expand="xl">
       <Navbar.Toggle aria-controls="basic-navbar-nav"/>
@@ -29,10 +40,10 @@ const NavBar = (props) => {
         </Nav>
       </Navbar>
     ;
-
+    
   return (
     <div>
-      {nav}
+      {header}
     </div>
   );
 };
