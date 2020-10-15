@@ -6,11 +6,16 @@
   }
 
 .bar { 
-  background-color: #d9b28c !important; 
+  background-color: #ecf7fc !important; 
   height: 5rem; 
 }
 
 .bar a { 
-  font-weight: bold; 
-  font-color: #352d15; 
+  font-weight: bold;
+}
+
+.h3 { 
+  font-size: 24px; 
+  text-align: center; 
+  text-transform: uppercase;
 }

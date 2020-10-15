@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Header.css';
+import HeroImage from '../HeroImage/HeroImage'
 import {
   Navbar,
   Nav, 
@@ -11,8 +11,7 @@ const NavBar = (props) => {
   let header = props.user ?
     <>
     <Navbar className="bar justify-content-between" expand="xl">
-      <Navbar.Brand href="#home">THE SUBLIMEST</Navbar.Brand>
-      <Navbar.Text>WELCOME, {props.user.name}</Navbar.Text>
+              <Navbar.Text className="h3">WELCOME, {props.user.name}</Navbar.Text>
       <Navbar />
         <Nav>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,9 +22,7 @@ const NavBar = (props) => {
         </Navbar.Collapse>
         </Nav>
     </Navbar>
-    <Jumbotron className="hero">
-    <img src="hiking-unsplash.jpg" width="100%"></img>
-    </Jumbotron>
+      <HeroImage />
       </>
     :
     <Navbar className="bg-light justify-content-between" expand="xl">

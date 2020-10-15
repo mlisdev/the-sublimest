@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import Header from '../../components/Header/Header';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import SearchResults from '../../components/SearchResults/SearchResults';
-import TrailCard from '../../components/TrailCard/TrailCard';
-import TrailDetail from '../../components/TrailDetail/TrailDetail';
+import SearchArea from '../../components/SearchArea/SearchArea';
+// import TrailCard from '../../components/TrailCard/TrailCard';
+// import TrailDetail from '../../components/TrailDetail/TrailDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Navbar, Nav } from 'react-bootstrap'; 
+import { Container } from 'react-bootstrap'; 
 
 
 class App extends Component {
@@ -53,8 +52,7 @@ class App extends Component {
             />
           }/>
         </Switch>
-        <SearchBar />
-        <SearchResults />
+          <SearchArea />
 
         </Container>
     );
