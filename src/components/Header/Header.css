@@ -4,3 +4,13 @@
     background-color:transparent !important;
     margin-bottom: 20px !important; 
   }
+
+.bar { 
+  background-color: #d9b28c !important; 
+  height: 5rem; 
+}
+
+.bar a { 
+  font-weight: bold; 
+  font-color: #352d15; 
+}

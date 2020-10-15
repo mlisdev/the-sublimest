@@ -10,13 +10,13 @@ import {
 const NavBar = (props) => {
   let header = props.user ?
     <>
-    <Navbar className="bg-light justify-content-between" expand="xl">
-    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+    <Navbar className="bar justify-content-between" expand="xl">
       <Navbar.Brand href="#home">THE SUBLIMEST</Navbar.Brand>
       <Navbar.Text>WELCOME, {props.user.name}</Navbar.Text>
-      <Navbar.Toggle />
-  <Nav>
-  <Navbar.Collapse className="justify-content-end">
+      <Navbar />
+        <Nav>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
             <Nav.Link href='/myreviews'>My Reviews</Nav.Link>
             <Nav.Link href='/about'>About Sublimest</Nav.Link>
           <Nav.Link href='' onClick={props.handleLogout}>Logout</Nav.Link>

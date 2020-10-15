@@ -5,6 +5,10 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import Header from '../../components/Header/Header';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import SearchResults from '../../components/SearchResults/SearchResults';
+import TrailCard from '../../components/TrailCard/TrailCard';
+import TrailDetail from '../../components/TrailDetail/TrailDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Navbar, Nav } from 'react-bootstrap'; 
 
@@ -30,15 +34,12 @@ class App extends Component {
 
   render() {
     return (
-      <Container> 
+      <Container fluid="md"> 
         <Header 
         user={this.state.user} 
         handleLogout={this.handleLogout}
             />
         <Switch>
-          <Route exact path='/' render={() =>
-           <div>Hello World!</div> 
-          }/>
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
               history={history}
@@ -52,6 +53,9 @@ class App extends Component {
             />
           }/>
         </Switch>
+        <SearchBar />
+        <SearchResults />
+
         </Container>
     );
   }
