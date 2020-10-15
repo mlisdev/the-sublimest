@@ -10,7 +10,7 @@ import {
 const NavBar = (props) => {
   let header = props.user ?
     <>
-    <Navbar className="bar justify-content-between" expand="xl">
+      <Navbar className="bar justify-content-between" expand="xl">
               <Navbar.Text className="h3">WELCOME, {props.user.name}</Navbar.Text>
       <Navbar />
         <Nav>
