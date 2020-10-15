@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
+// import trailService from '../../utils/trailService'; 
 import Header from '../../components/Header/Header';
 import SearchArea from '../../components/SearchArea/SearchArea';
 // import TrailCard from '../../components/TrailCard/TrailCard';
@@ -52,8 +53,10 @@ class App extends Component {
             />
           }/>
         </Switch>
-          <SearchArea />
 
+        
+        {this.state.user &&
+          <SearchArea />} 
         </Container>
     );
   }
