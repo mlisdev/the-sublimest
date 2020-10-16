@@ -1,0 +1,16 @@
+.infoRow { 
+    border-bottom: 1px solid #b6bd7a; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
+.textRow { 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
+.title { 
+    display: flex; 
+    align-content: center !important;
+    justify-content: center;
+}

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 // import TrailDetail from '../../pages/TrailDetail'; 
 import {
   Card,
-  CardColumns,
   ListGroup
 } from 'react-bootstrap'; 
 
