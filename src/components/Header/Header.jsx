@@ -17,6 +17,7 @@ const NavBar = (props) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" >
             <Nav className="mr-auto">
+            <Nav.Link href='/'>Find A Trail</Nav.Link>
             <Nav.Link href='/myreviews'>My Reviews</Nav.Link>
             <Nav.Link href='/about'>About Sublimest</Nav.Link>
               <Nav.Link href='' onClick={props.handleLogout}>Logout</Nav.Link>

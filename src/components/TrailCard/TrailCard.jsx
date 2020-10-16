@@ -17,10 +17,10 @@ function TrailCard(props) {
           <Card.Title>{props.trail.name}</Card.Title>
     <Card.Text>
             <ListGroup variant="flush">
-              <ListGroup.Item>Location</ListGroup.Item>
+              <ListGroup.Item><b>Location</b></ListGroup.Item>
               <ListGroup.Item>{props.trail.location}</ListGroup.Item>
-              Summary
-              {props.trail.summary}
+              <ListGroup.Item><b>Summary</b></ListGroup.Item>
+              <ListGroup.Item>{props.trail.summary}</ListGroup.Item>
       </ListGroup>
     </Card.Text>
           <Link
