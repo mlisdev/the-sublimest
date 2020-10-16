@@ -1,5 +1,6 @@
 import React from "react";
-import './TrailDetail.css'; 
+import './TrailDetail.css';
+import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import {
   Container, 
   Col, 
@@ -53,6 +54,11 @@ function TrailDetail(props) {
         
         <br /> 
         <h3>Reviews</h3>
+        <ReviewForm 
+          trail={trail}
+          user={props.user}
+        />
+        
     </Container>
         </>
     )

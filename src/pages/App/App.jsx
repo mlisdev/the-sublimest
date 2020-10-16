@@ -4,10 +4,9 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-// import trailService from '../../utils/trailService'; 
+
 import Header from '../../components/Header/Header';
 import SearchArea from '../../components/SearchArea/SearchArea';
-// import TrailCard from '../../components/TrailCard/TrailCard';
 import TrailDetail from '../../pages/TrailDetail/TrailDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap'; 
@@ -55,7 +54,8 @@ class App extends Component {
           <Route exact path='/details' render={({history}) => 
             userService.getUser() ?
             <TrailDetail
-              history={history}
+                history={history}
+                user={this.state.user}
             />
               :
               <Redirect to='/login' />
