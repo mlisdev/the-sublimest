@@ -52,7 +52,6 @@ function TrailDetail(props) {
           <Col md={5} className="textRow justify-content-center align-self-center">{trail.summary}</Col>
         </Row>
         
-        <br /> 
         <h3>Reviews</h3>
         <ReviewForm 
           trail={trail}
