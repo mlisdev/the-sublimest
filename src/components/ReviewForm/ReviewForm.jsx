@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Col, Form, Button } from 'react-bootstrap'
 import reviewService from '../../utils/reviewService'
-import Reviews from '../../components/Reviews/Reviews'
 
 function ReviewForm (props) {
   const [review, setReview] = useState({
@@ -17,7 +16,7 @@ function ReviewForm (props) {
   useEffect(() => {reviewService.getAll(props.trail.id).then(res => {
       setReviews(res)
     })
-  }, [change, props.trail.id]);
+  }, [change]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,16 +60,20 @@ function ReviewForm (props) {
           <br />
                 <Button type="submit">Submit</Button>
           </Form>
-          <Reviews 
-            trail={props.trail}
-            reviews={props.reviews}
-            user={props.user}
-            review={review}
-          />   
+
+          {reviews.map((review, idx) => (
+            <div  key={idx} >
+              <div>{review.review}</div>
+              <div>{review.rating}</div>
+              <div>{review.updates}</div>
+              <div>{review.covid}</div>
+              {props.user._id == review.user ?
+                <div onClick={() => reviewService.delete(
+                  review._id).then(res => setChange(!change))}>DELETE</div>
+                : null} 
+          </div>
+          ))}
     </>
   );
 }
-
-
 export default ReviewForm;
-
