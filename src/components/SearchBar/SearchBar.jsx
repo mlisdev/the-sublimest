@@ -32,11 +32,12 @@ function SearchBar(props) {
       
       { results && (
 <>  <CardColumns>
-          { results.trails.map((trail, idx, location) => (
+          { results.trails.map((trail, idx, location, history) => (
             <TrailCard 
               trail={trail}
               key={idx}
               location={location}
+              history={history}
             />
           ))}
           </CardColumns>

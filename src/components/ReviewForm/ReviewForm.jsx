@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useHistory } from "react";
 import { useEffect } from "react";
 import { Container, Card,  Row, Col, Form, Button, CardDeck } from 'react-bootstrap';
 import reviewService from '../../utils/reviewService';
 import './ReviewForm.css'
 
-function ReviewForm (props) {
+function ReviewForm(props) {
+  const history = useHistory(); 
   const [review, setReview] = useState({
     review: '',
     rating: '3',
@@ -22,6 +23,7 @@ function ReviewForm (props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     reviewService.create(review).then(res => setChange(!change));
+    
   }
 
       return (
