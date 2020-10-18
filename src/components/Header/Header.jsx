@@ -11,7 +11,7 @@ const NavBar = (props) => {
   let header = props.user ?
     <>
       <Navbar className="bar justify-content-between" expand="xl">
-              <Navbar.Text className="h3">WELCOME, {props.user.name}</Navbar.Text>
+        <Navbar.Brand><img src="sublimestsmall.png" alt="logo"></img></Navbar.Brand>
       <Navbar />
         <Nav>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

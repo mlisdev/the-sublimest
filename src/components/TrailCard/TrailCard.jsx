@@ -6,7 +6,7 @@ import {
   ListGroup
 } from 'react-bootstrap'; 
 
-function TrailCard(props) {
+function TrailCard(props, history) {
   return (
     <>
     
@@ -27,7 +27,9 @@ function TrailCard(props) {
           <span className="traillinks">
               <Link  to={{
               pathname: "/details", 
-              state: { trail: props.trail }
+              state: {
+                trail: props.trail,
+              history: history}
             }}>More Info on Sublimest</Link> &nbsp; &nbsp; &nbsp; 
             <a href={props.trail.url} rel="noopener noreferrer" target="_blank"><img src="logoHex2.svg" width="50px" alt="HikingProject logo"></img></a>
             </span>

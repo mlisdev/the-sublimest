@@ -14,3 +14,10 @@
     align-content: center !important;
     justify-content: center;
 }
+
+.infoz { 
+    border-bottom: 1px solid #b6bd7a; 
+    width: 6rem; 
+        font-weight: bold; 
+    color: brown;
+}

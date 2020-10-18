@@ -22,14 +22,18 @@ function TrailDetail(props) {
         <Card.Body>
             <Card.Title>{trail.name}</Card.Title>
         <Card.Text>
-            <label>Summary</label>: <br />
-            {trail.summary}
+            <label className="infoz">Location</label>: {trail.location}
         </Card.Text>
           </Card.Body>
             <ListGroup className="list-group-flush">
-              <ListGroupItem>Cras justo odio</ListGroupItem>
-              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+              <ListGroupItem><label className="infoz">Length</label>: {trail.length}</ListGroupItem>
+              <ListGroupItem><label className="infoz">Difficulty</label>: {trail.difficulty}</ListGroupItem>
+              <ListGroupItem><label className="infoz">Ascent</label>: {trail.ascent}</ListGroupItem>
+              <ListGroupItem><label className="infoz">Descent</label>: {trail.descent}</ListGroupItem>
+              <ListGroupItem><label className="infoz">Star Rating</label>: {trail.stars}</ListGroupItem>
+              <ListGroupItem><label className="infoz"># of Votes</label>: {trail.starVotes}</ListGroupItem>
+              <ListGroupItem><label className="infoz">Summary</label>: {trail.summary}</ListGroupItem>
+
             </ListGroup>
             <Card.Body>
                 <Card.Link href={trail.url}><img src="logoHex2.svg" width="50px" alt="HikingProject logo"></img></Card.Link>

@@ -63,7 +63,8 @@ class App extends Component {
           <Route exact path='/' render={({ history }) =>
              userService.getUser() ?
             <SearchArea
-              history={history}
+                history={history}
+                user={this.state.user}
               />
                 :
               <Redirect to='/login' />

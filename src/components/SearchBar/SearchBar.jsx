@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom"; 
 // import { Link } from "react-router-dom"; 
 import { Col, Form, Button, CardColumns } from 'react-bootstrap'
 import trailService from '../../utils/trailService'; 
@@ -6,16 +7,19 @@ import TrailCard from '../TrailCard/TrailCard'
 
 
 function SearchBar(props) {
+  const history = useHistory(); 
   const [zipcode, setZipcode] = useState(''); 
 
-  const [results, setResults] = useState(null); 
+  const [results, setResults] = useState(null);
 
   const handleSubmit = (e) => { 
     e.preventDefault();
     trailService.search(zipcode).then(res => setResults(res)); 
+    history.push(e.target.value)
   }
   return (
     <>
+     
     <h2>Search Bar</h2>
         <Form onSubmit={handleSubmit}>
             <Form.Row className="justify-content-center">
