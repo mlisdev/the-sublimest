@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom"; 
 // import { Link } from "react-router-dom"; 
-import { Col, Form, Button, CardColumns } from 'react-bootstrap'
+import { Col, Form, Button, CardColumns } from 'react-bootstrap'; 
 import trailService from '../../utils/trailService'; 
-import TrailCard from '../TrailCard/TrailCard'
+import TrailCard from '../TrailCard/TrailCard'; 
+import './SearchBar.css'; 
 
 
 function SearchBar(props) {
@@ -19,8 +20,12 @@ function SearchBar(props) {
   }
   return (
     <>
-     
-    <h2>Search Bar</h2>
+      <center>
+        <div class="headertext">
+        Looking for a hike?<br />
+        Enter a zipcode below to find a nearby hiking trail! 
+        </div>
+      </center>
         <Form onSubmit={handleSubmit}>
             <Form.Row className="justify-content-center">
                 <Col sm={3} className="my-1">
