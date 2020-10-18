@@ -29,7 +29,7 @@ function TrailCard(props) {
               pathname: "/details", 
               state: {trail: props.trail},
             }}>More Info on Sublimest</Link> &nbsp; &nbsp; &nbsp; 
-            <a href={props.trail.url}><img src="logoHex2.svg" width="50px" alt="HikingProject logo"></img></a>
+            <a href={props.trail.url} rel="noopener noreferrer" target="_blank"><img src="logoHex2.svg" width="50px" alt="HikingProject logo"></img></a>
             </span>
             </Card.Body>
 
