@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-// import TrailDetail from '../../pages/TrailDetail'; 
+import './TrailCard.css'; 
 import {
   Card,
   ListGroup
@@ -21,14 +21,18 @@ function TrailCard(props) {
               <ListGroup.Item><b>Summary</b></ListGroup.Item>
               <ListGroup.Item>{props.trail.summary}</ListGroup.Item>
       </ListGroup>
-    </Card.Text>
-          <Link
-            to={{
+          </Card.Text>
+  </Card.Body>
+        <Card.Body>
+          <span className="traillinks">
+              <Link  to={{
               pathname: "/details", 
               state: {trail: props.trail},
-            }}
-            >More info</Link>
-  </Card.Body>
+            }}>More Info on Sublimest</Link> &nbsp; &nbsp; &nbsp; 
+            <a href={props.trail.url}><img src="logoHex2.svg" width="50px" alt="HikingProject logo"></img></a>
+            </span>
+            </Card.Body>
+
         </Card>
     </>
   );

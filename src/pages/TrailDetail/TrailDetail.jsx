@@ -4,64 +4,47 @@ import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import {
   Container, 
   Col, 
-  Row
+  Row, 
+  ListGroup, 
+  Card, 
+  ListGroupItem
 } from 'react-bootstrap'; 
 
 function TrailDetail(props) {
-  // const [details, setDetails] = useState(null);
 
-  // const { id } = useParams();
-
-  // useEffect(() => {
-  //   trailAPI.getOne(id).then(res => setDetails(res))
-  // }, [id]); 
   let trail = props.history.location.state.trail; 
   return (
-    // details && (
     <>
       <Container>
         <Row>
-         <Col xs={8} className="justify-content-center align-self-center"><h4>{trail.name}</h4></Col>
-          </Row>
-      <Row>
-          <Col xs={2} className="infoRow"><b>Trail Location</b></Col>
-          <Col md="auto" className="textRow">{trail.location}</Col>
-        </Row>
-        <Row>
-          <Col xs={2} className="infoRow"><b> Difficulty</b></Col>
-          <Col md="auto" className="textRow">{trail.difficulty}</Col>
-        </Row>
-        <Row>
-          <Col xs={2} className="infoRow"><b>Star Rating</b></Col>
-          <Col md="auto" className="textRow">{trail.stars}</Col>
-      </Row>
-        <Row>
-          <Col xs={2} className="infoRow"><b>No. of Votes</b></Col>
-          <Col md="auto" className="textRow">{trail.starVotes}</Col>
-      </Row>
-        <Row>
-          <Col xs={2} className="infoRow"><b>Ascent</b></Col>
-          <Col md="auto" className="textRow">{trail.ascent}</Col>
-      </Row>
-        <Row>
-          <Col xs={2} className="infoRow"><b>Descent</b></Col>
-          <Col md="auto" className="textRow">{trail.descent}</Col>
-      </Row>
-        <Row>
-          <Col xs={2} className="infoRow justify-content-center align-self-center"><b>Summary</b></Col>
-          <Col md={5} className="textRow justify-content-center align-self-center">{trail.summary}</Col>
-        </Row>
-        
-        <h3>Reviews</h3>
+        <Col>
+        <Card style={{ width: '100%' }}>
+        <Card.Body>
+            <Card.Title>{trail.name}</Card.Title>
+        <Card.Text>
+            <label>Summary</label>: <br />
+            {trail.summary}
+        </Card.Text>
+          </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>Cras justo odio</ListGroupItem>
+              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+            </ListGroup>
+            <Card.Body>
+                <Card.Link href={trail.url}><img src="logoHex2.svg" width="50px" alt="HikingProject logo"></img></Card.Link>
+            </Card.Body>
+          </Card>
+        </Col>
+
         <ReviewForm 
           trail={trail}
           user={props.user}
         />
-        
+</Row>
     </Container>
         </>
     )
-  // );
 }
 
 export default TrailDetail;

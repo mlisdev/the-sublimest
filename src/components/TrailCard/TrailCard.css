@@ -1,0 +1,6 @@
+.traillinks { 
+   display: flex; 
+   justify-content: center;
+   align-content: space-around !important;
+   align-items: stretch;
+}

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Col, Form, Button } from 'react-bootstrap'
-import reviewService from '../../utils/reviewService'
+import { Container, Card,  Row, Col, Form, Button, CardDeck } from 'react-bootstrap';
+import reviewService from '../../utils/reviewService';
+import './ReviewForm.css'
 
 function ReviewForm (props) {
   const [review, setReview] = useState({
@@ -16,7 +17,7 @@ function ReviewForm (props) {
   useEffect(() => {reviewService.getAll(props.trail.id).then(res => {
       setReviews(res)
     })
-  }, [change]);
+  }, [change, props.trail.id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +25,8 @@ function ReviewForm (props) {
   }
 
       return (
-    <>
+        <>
+    <Col>
       <Form onSubmit={handleSubmit}>
         <Form.Group as={Col} controlId="review">
           <Form.Label>Review</Form.Label>
@@ -59,20 +61,43 @@ function ReviewForm (props) {
         </Form.Group>
           <br />
                 <Button type="submit">Submit</Button>
-          </Form>
+            </Form>
+          </Col>
 
-          {reviews.map((review, idx) => (
-            <div  key={idx} >
-              <div>{review.review}</div>
-              <div>{review.rating}</div>
-              <div>{review.updates}</div>
-              <div>{review.covid}</div>
-              {props.user._id == review.user ?
-                <div onClick={() => reviewService.delete(
-                  review._id).then(res => setChange(!change))}>DELETE</div>
-                : null} 
-          </div>
-          ))}
+<Container>         
+ <Row>
+          <Col>
+            
+                <h3>Current Reviews</h3>
+                <CardDeck>
+             {reviews.map((review, idx) => (
+            <Card border="success" className="card">
+                 <Card.Header bg="success">Rating: {review.rating}</Card.Header>
+                    <Card.Body>
+                      <Card.Text>
+                          <div key={idx} >
+                            <label>Review</label><br />
+                            {review.review}<br />
+                            <label>Any updates?</label><br />
+                            {review.updates}<br />
+                            <label>Any changes due to COVID?</label><br />
+                            {review.covid}<br />
+                            <Button>
+                    {props.user._id === review.user ?
+                      <div onClick={() => reviewService.delete(
+                        review._id).then(res => setChange(!change))}>DELETE</div>
+                                : null} 
+                              </Button>
+                        </div>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+             ))}
+                  </CardDeck>
+            </Col>
+            </Row>
+          </Container>
+
     </>
   );
 }
