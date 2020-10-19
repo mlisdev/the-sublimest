@@ -4,7 +4,6 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-import About from '../About/About';
 import Header from '../../components/Header/Header';
 import SearchArea from '../../components/SearchArea/SearchArea';
 import TrailDetail from '../../pages/TrailDetail/TrailDetail';
