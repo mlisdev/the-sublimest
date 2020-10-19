@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom"; 
 // import { Link } from "react-router-dom"; 
-import { Col, Form, Button, CardColumns } from 'react-bootstrap'; 
+import { Col, Form, Button, CardColumns, Row } from 'react-bootstrap'; 
 import trailService from '../../utils/trailService'; 
 import TrailCard from '../TrailCard/TrailCard'; 
 import './SearchBar.css'; 
@@ -22,7 +22,7 @@ function SearchBar(props) {
     <>
         <Form onSubmit={handleSubmit}>
             <Form.Row className="justify-content-center">
-                <Col sm={3} className="my-1">
+          <Col sm={4} className="my-1">
                 <Form.Label htmlFor="inlineFormInputName">
                     Enter a Zipcode to Find a Hike: 
                 </Form.Label>
@@ -32,9 +32,10 @@ function SearchBar(props) {
                 </Col>
             </Form.Row>
       </Form>
-      
       { results && (
-<>  <CardColumns>
+        <>
+
+  <CardColumns>
           { results.trails.map((trail, idx, location, history) => (
             <TrailCard 
               trail={trail}
@@ -44,6 +45,7 @@ function SearchBar(props) {
             />
           ))}
           </CardColumns>
+
           </>
       )}
             
