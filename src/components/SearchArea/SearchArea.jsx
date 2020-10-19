@@ -8,11 +8,12 @@ function SearchArea(props, history) {
       <>
       <Container>
         <center>
-          <span className="banner"><mark>Welcome, {props.user.name}</mark></span>
+          <div className="hero">
+            <h1>hello, {props.user.name}!</h1>
+            </div>
         <SearchBar 
           user={props.user}
-          history={history}
-                  />
+          history={history} />
           </center>
           </Container>
     </>

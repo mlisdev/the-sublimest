@@ -8,3 +8,12 @@ mark {
     background-color: #ecf7fc !important; 
     text-decoration: underline;
 }
+
+.hero h1 { 
+  position: relative;
+  color: #c79970;  
+  font-size: 30pt;
+  line-height: 0.9;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}

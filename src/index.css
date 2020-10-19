@@ -5,3 +5,24 @@ body {
   font-size: 20px; 
 }
 
+h1 { 
+    font-size: 30px; 
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+h2 { 
+  font-size: 28px; 
+  font-family: 'Roboto Slab', sans-serif;
+}
+h3 { 
+  font-size: 24px; 
+  font-family: 'Roboto Slab', sans-serif;
+}
+h4 { 
+  font-size: 20px; 
+  font-family: 'Roboto Slab', sans-serif;
+}
+h5 { 
+  font-size: 18px; 
+  font-family: 'Roboto Slab', sans-serif;
+}

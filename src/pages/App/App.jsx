@@ -4,7 +4,7 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-
+import About from '../About/About';
 import Header from '../../components/Header/Header';
 import SearchArea from '../../components/SearchArea/SearchArea';
 import TrailDetail from '../../pages/TrailDetail/TrailDetail';
@@ -36,8 +36,9 @@ class App extends Component {
       <Container fluid="md"> 
         <Header 
         user={this.state.user} 
-        handleLogout={this.handleLogout}
-            />
+          handleLogout={this.handleLogout}
+          history={this.history}
+        />
         <Switch>
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
@@ -59,7 +60,7 @@ class App extends Component {
             />
               :
               <Redirect to='/login' />
-          }/>
+          } />
           <Route exact path='/' render={({ history }) =>
              userService.getUser() ?
             <SearchArea

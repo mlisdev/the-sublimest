@@ -18,13 +18,14 @@ const NavBar = (props) => {
           <Navbar.Collapse id="responsive-navbar-nav" >
             <Nav className="mr-auto">
             <Nav.Link href='/'>Find A Trail</Nav.Link>
-            <Nav.Link href='/about'>About Sublimest</Nav.Link>
               <Nav.Link href='' onClick={props.handleLogout}>Logout</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Nav>
         </Navbar>
-      <HeroImage />
+      <HeroImage 
+        user={props.user}
+      />
       </>
     :
     <>

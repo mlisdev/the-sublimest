@@ -87,12 +87,12 @@ function ReviewForm(props) {
                        {review.covid}<br />
                        <br />
                        <center>
-                            <Button>
+                            
                     {props.user._id === review.user ?
-                      <div onClick={() => reviewService.delete(
-                        review._id).then(res => setChange(!change))}>DELETE</div>
+                      <Button onClick={() => reviewService.delete(
+                        review._id).then(res => setChange(!change))}>DELETE</Button>
                                 : null} 
-                       </Button>
+                       
                        </center>
                         </div>
                     </Card.Text>

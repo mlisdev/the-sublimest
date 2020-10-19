@@ -20,17 +20,11 @@ function SearchBar(props) {
   }
   return (
     <>
-      <center>
-        <div class="headertext">
-        Looking for a hike?<br />
-        Enter a zipcode below to find a nearby hiking trail! 
-        </div>
-      </center>
         <Form onSubmit={handleSubmit}>
             <Form.Row className="justify-content-center">
                 <Col sm={3} className="my-1">
                 <Form.Label htmlFor="inlineFormInputName">
-                    Enter a Zipcode: 
+                    Enter a Zipcode to Find a Hike: 
                 </Form.Label>
                 <Form.Control id="inlineFormInputName" placeholder="99755" onChange={e => setZipcode(e.target.value)} />
                       <br />
