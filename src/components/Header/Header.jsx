@@ -30,7 +30,7 @@ const NavBar = (props) => {
     :
     <>
     <Navbar className="bar justify-content-between" expand="xl">
-      <Navbar.Brand href="#home">THE SUBLIMEST</Navbar.Brand>
+      <Navbar.Brand><img src="sublimestsmall.png" alt="logo" height="50px"></img></Navbar.Brand>
        <Navbar />
         <Nav>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
