@@ -36,6 +36,7 @@ Example review.
 
 ### The App 
 [Deployed App on Heroku](http://thesublimest.herokuapp.com)
+
 Project Planning [Trello Board](https://trello.com/b/61Mt71Mt/sublimest-hike-finder)
 
 ---
