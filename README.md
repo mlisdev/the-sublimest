@@ -5,7 +5,7 @@
 **The Sublimest** was created with love for hiking and the Romantic idea of [the Sublime](https://en.wikipedia.org/wiki/Sublime_(literary)), to help us find experiences that take us outside of ourselves. 
 
 Using the [Hiking Project API](https://www.hikingproject.com/data), The Sublimest helps users search for hiking trails nearby and leave reviews about them. 
-
+## As of December 2020, The Hiking Project API has been closed from public use. This project no longer works as designed as the API access has been severed.
 ---
 
 ### Screenshots 
